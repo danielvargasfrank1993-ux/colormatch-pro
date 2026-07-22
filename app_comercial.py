@@ -1,18 +1,10 @@
-import banco
 from io import BytesIO
 import sqlite3
 from PIL import Image
 import streamlit as st
 
-# IMPORTANTE: Garante a criação do banco e das tabelas na inicialização
-import bancofrom io import BytesIO
-import sqlite3
-from PIL import Image
-import streamlit as st
-
-# ReportLab para PDFs
-from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen import canvas
+# Importa e garante a criação das tabelas no banco de dados
+import banco
 
 # Configuração da Página
 st.set_page_config(
@@ -187,6 +179,10 @@ if cores_salvas:
         st.write(f"• *Amarelo (Y25):* {y25_tot:.2f} g")
         st.write(f"• *Vermelho (930):* {v930_tot:.2f} g")
         st.write(f"• *Azul (SH):* {sh_tot:.2f} g")
+
+        # ReportLab para PDFs
+        from reportlab.lib.pagesizes import A4
+        from reportlab.pdfgen import canvas
 
         # Gerador de PDF em Memória
         buffer = BytesIO()
