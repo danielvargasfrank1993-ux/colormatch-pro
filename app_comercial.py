@@ -23,6 +23,7 @@ st.set_page_config(
 
 # --- CONEXÃO COM O BANCO DE DADOS ---
 def conectar_bd():
+    banco.criar_tabelas()
     return sqlite3.connect("colormatch_comercial.db")
 
 
