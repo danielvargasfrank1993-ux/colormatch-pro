@@ -1,3 +1,4 @@
+import banco
 from io import BytesIO
 import sqlite3
 from PIL import Image
